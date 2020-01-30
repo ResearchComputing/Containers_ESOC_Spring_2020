@@ -3,13 +3,13 @@
 #Try the following:
 
 # Pull an existing container image that someone else posted:
-singularity pull --name hello.sif shub://monaghaa/singularity_git_tutorial
+`singularity pull --name hello.sif shub://monaghaa/singularity_git_tutorial`
 
 # …And run it:
-singularity run hello.sif
+`singularity run hello.sif`
 
 # …And look at the script inside:
-singularity exec hello.sif cat /code/hello.sh
+`singularity exec hello.sif cat /code/hello.sh`
 
 # Now let’s grab the stock docker python container:
 `singularity pull --name pythond.sif docker://python`
