@@ -3,22 +3,22 @@
 #Try the following:
 
 # Pull an existing container image that someone else posted:
-singularity pull --name hello.img shub://monaghaa/singularity_git_tutorial
+singularity pull --name hello.sif shub://monaghaa/singularity_git_tutorial
 
 # …And run it:
-singularity run hello.img
+singularity run hello.sif
 
 # …And look at the script inside:
-singularity exec hello.img cat /code/hello.sh
+singularity exec hello.sif cat /code/hello.sh
 
 # Now let’s grab the stock docker python container:
-singularity pull --name pythond.img docker://python
+singularity pull --name pythond.sif docker://python
 
 # …And run python from it:
-singularity exec pythond.img python
+singularity exec pythond.sif python
 
 # …And shell into the container and look around:
-singularity shell pythond.img
+singularity shell pythond.sif
 
 # …try “ls /” What directories do you see?:
 
@@ -27,7 +27,7 @@ singularity shell pythond.img
 echo 'print("hello world from the outside")' >myscript.py
 
 #…And now let’s run the script using the containerized python
-#singularity exec pythond.img python ./myscript.py
+#singularity exec pythond.sif python ./myscript.py
 
 #…Conclusion: Scripts and data can be kept inside or outside the container.
 #In some instances (e.g., large datasets or scripts that will change frequently)
@@ -38,16 +38,16 @@ echo 'print("hello world from the outside")' >myscript.py
 #you may want to access a directory that is not already mounted.
 #Let’s try it:
 
-#Note that the “/opt” directory in ”pythond.img” is empty.
+#Note that the “/opt” directory in ”pythond.sif” is empty.
 #But the Summit ”/opt” directory is not.  Let’s bind it:
-singularity shell –bind /opt:/opt pythond.img
+singularity shell –bind /opt:/opt pythond.sif
 
 #Now from within the container type "ls -l /opt" and see if it matches
 #what you see from the outside of the container if you type the same thing.
 
 # …It isn’t necessary to bind like-named directories like we did above.
 #Try binding your /home/$USER directory to /opt.
-singularity shell –bind /home/$USER:/opt pythond.img
+singularity shell –bind /home/$USER:/opt pythond.sif
 
 #Now from within the container type "ls -l $HOME" and see if it matches
 #what you see from the outside of the container if you type the same thing.
