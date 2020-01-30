@@ -1,6 +1,5 @@
 See http://singularity.lbl.gov/quickstart for more options and examples
 
-Try the following:
 
 ### Running a container from Singularity Hub
 
@@ -51,7 +50,7 @@ singularity exec pythond.sif python ./myscript.py
 
 …Conclusion: Scripts and data can be kept inside or outside the container. In some instances (e.g., large datasets or scripts that will change frequently) it is easier to containerize the software and keep everything else outside.
 
-# Binding directories to a container
+### Binding directories to a container
 
 On Summit, most host directories are “bound” (mounted) by default. But on other systems, or in some instances on Summit, you may want to access a directory that is not already mounted.
 Let’s try it:
