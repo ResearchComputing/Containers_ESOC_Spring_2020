@@ -57,14 +57,14 @@ Let’s try it:
 
 Note that the “/opt” directory in ”pythond.sif” is empty. But the Summit ”/opt” directory is not.  Let’s bind it:
 ```
-singularity shell –bind /opt:/opt pythond.sif
+singularity shell --bind /opt:/opt pythond.sif
 ```
 
 Now from within the container type "ls -l /opt" and see if it matches what you see from the outside of the container if you type the same thing.
 
  …It isn’t necessary to bind like-named directories like we did above. Try binding your /home/$USER directory to /opt.
 ```
-singularity shell –bind /home/$USER:/opt pythond.sif
+singularity shell --bind /home/$USER:/opt pythond.sif
 ```
 
 Now from within the container type "ls -l $HOME" and see if it matches
